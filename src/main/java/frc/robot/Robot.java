@@ -53,10 +53,10 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousInit() {
         // Create an LED pattern that sets the entire strip to solid red
-        LEDPattern red = LEDPattern.solid(Color.kAquamarine);
+        LEDPattern light = LEDPattern.solid(Color.kAquamarine);
 
         // Apply the LED pattern to the data buffer
-        red.applyTo(ledStripBuffer);
+        light.applyTo(ledStripBuffer);
 
         // Set the data
         // This will now use the LEDPattern that we applied to the buffer, which in this case is aquamarine
@@ -71,10 +71,10 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopInit() {
         // Create an LED pattern that sets the entire strip to solid red
-        LEDPattern red = LEDPattern.solid(Color.kPurple);
+        LEDPattern light = LEDPattern.solid(Color.kPurple);
 
         // Apply the LED pattern to the data buffer
-        red.applyTo(ledStripBuffer);
+        light.applyTo(ledStripBuffer);
 
         // Set the data
         // This will now use the LEDPattern that we applied to the buffer, which in this case is green
@@ -89,10 +89,10 @@ public class Robot extends TimedRobot {
     @Override
     public void testInit() {
         // Create an LED pattern that sets the entire strip to solid red
-        LEDPattern red = LEDPattern.solid(Color.kGreen);
+        LEDPattern light = LEDPattern.solid(Color.kGreen);
 
         // Apply the LED pattern to the data buffer
-        red.applyTo(ledStripBuffer);
+        light.applyTo(ledStripBuffer);
 
         // Set the data
         // This will now use the LEDPattern that we applied to the buffer, which in this case is green
