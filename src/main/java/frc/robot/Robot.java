@@ -51,7 +51,17 @@ public class Robot extends TimedRobot {
 
     /** This function is run once each time the robot enters autonomous mode. */
     @Override
-    public void autonomousInit() {}
+    public void autonomousInit() {
+        // Create an LED pattern that sets the entire strip to solid red
+        LEDPattern red = LEDPattern.solid(Color.kAquamarine);
+
+        // Apply the LED pattern to the data buffer
+        red.applyTo(ledStripBuffer);
+
+        // Set the data
+        // This will now use the LEDPattern that we applied to the buffer, which in this case is aquamarine
+        ledStrip.setData(ledStripBuffer);
+    }
 
     /** This function is called periodically during autonomous. */
     @Override
