@@ -69,7 +69,17 @@ public class Robot extends TimedRobot {
 
     /** This function is called once each time the robot enters teleoperated mode. */
     @Override
-    public void teleopInit() {}
+    public void teleopInit() {
+        // Create an LED pattern that sets the entire strip to solid red
+        LEDPattern red = LEDPattern.solid(Color.kPurple);
+
+        // Apply the LED pattern to the data buffer
+        red.applyTo(ledStripBuffer);
+
+        // Set the data
+        // This will now use the LEDPattern that we applied to the buffer, which in this case is green
+        ledStrip.setData(ledStripBuffer);
+    }
 
     /** This function is called periodically during teleoperated mode. */
     @Override
@@ -77,7 +87,17 @@ public class Robot extends TimedRobot {
 
     /** This function is called once each time the robot enters test mode. */
     @Override
-    public void testInit() {}
+    public void testInit() {
+        // Create an LED pattern that sets the entire strip to solid red
+        LEDPattern red = LEDPattern.solid(Color.kGreen);
+
+        // Apply the LED pattern to the data buffer
+        red.applyTo(ledStripBuffer);
+
+        // Set the data
+        // This will now use the LEDPattern that we applied to the buffer, which in this case is green
+        ledStrip.setData(ledStripBuffer);
+    }
 
     /** This function is called periodically during test mode. */
     @Override
