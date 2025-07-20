@@ -8,6 +8,7 @@ import edu.wpi.first.util.sendable.SendableRegistry;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
+import edu.wpi.first.wpilibj.util.Color;
 
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
@@ -34,8 +35,14 @@ public class Robot extends TimedRobot {
         // Using that call here means that we know the length of the buffer is equal to the ledStrip object's length
         ledStrip.setLength(ledStripBuffer.getLength());
 
+        // Create an LED pattern that sets the entire strip to solid red
+        LEDPattern red = LEDPattern.solid(Color.kRed);
+
+        // Apply the LED pattern to the data buffer
+        red.applyTo(ledStripBuffer);
+
         // Set the data
-        // This will use the default LED strip color of 0, 0, 0 (white)
+        // This will now use the LEDPattern that we applied to the buffer, which in this case is red
         ledStrip.setData(ledStripBuffer);
 
         // Starts the LED strip meaning that every tick (time the periodic function runs) it will update the LED strip with the new color
